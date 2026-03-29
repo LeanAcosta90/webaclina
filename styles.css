@@ -150,14 +150,14 @@ h1 {
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
-  background: rgba(255, 255, 255, 0.15);
+  background: hsla(263, 30%, 82%, 0.15); /* VIOLETA con 15% opacidad */
   backdrop-filter: blur(4px);
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .carousel-bg {
-  display: none;
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .carousel-title {
