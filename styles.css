@@ -5,7 +5,13 @@ body {
   font-family: 'Outfit', sans-serif;
   -webkit-font-smoothing: antialiased;
   color: hsl(260, 10%, 12%);
-  background: hsl(0, 0%, 100%);
+  
+  background-color: #f5f5f5;
+  background-image: url('images/circuito-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 a { text-decoration: none; color: inherit; }
 img { display: block; max-width: 100%; }
@@ -68,8 +74,19 @@ img { display: block; max-width: 100%; }
 }
 
 /* ── Hero ── */
-.hero { position: relative; overflow: hidden; background: white; }
-.hero-inner { position: relative; z-index: 10; padding: 2.5rem 1.5rem 5rem; max-width: 80rem; margin: 0 auto; }
+.hero { 
+  position: relative; 
+  overflow: hidden; 
+  background: transparent;
+}
+.hero-inner { 
+  position: relative; 
+  z-index: 10; 
+  padding: 2.5rem 1.5rem 5rem; 
+  max-width: 80rem; 
+  margin: 0 auto; 
+  background: transparent;
+}
 .hero-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center; }
 .hero-logo-wrap { margin-bottom: 1.5rem; }
 .hero-logo {
@@ -119,18 +136,101 @@ h1 {
 .notif-card-inner .notif-sub { font-size: 11px; color: var(--muted); }
 .notif-card-inner .notif-main { font-size: 0.875rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
+/* ── Logo Carousel ── */
+.logo-carousel {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  margin: 2rem 0;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(4px);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.carousel-bg {
+  display: none;
+}
+
+.carousel-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: hsl(260, 10%, 12%);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+  opacity: 1 !important;
+  filter: none !important;
+  background: transparent;
+}
+
+.carousel-track {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  padding: 0 2rem;
+  max-width: 100%;
+}
+
+.carousel-track a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.carousel-track img {
+  height: 80px;
+  width: auto;
+  max-width: 150px;
+  object-fit: contain;
+  opacity: 1 !important;
+  filter: none !important;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.carousel-track img:hover {
+  transform: scale(1.2);
+  opacity: 1 !important;
+}
+
 /* ── Features ── */
 .features {
   position: relative; z-index: 2; overflow: hidden;
   border-radius: 2rem 2rem 0 0; margin-top: -2rem;
-  background: var(--surface);
+  background: transparent; /* TRANSPARENTE */
 }
-.features-inner { position: relative; z-index: 10; padding: 5rem 1.5rem 7rem; max-width: 80rem; margin: 0 auto; }
-.features-title { font-size: 1.875rem; font-weight: 700; letter-spacing: -0.02em; margin: 1.25rem 0 4rem; max-width: 28rem; }
+.features-inner { 
+  position: relative; 
+  z-index: 10; 
+  padding: 5rem 1.5rem 7rem; 
+  max-width: 80rem; 
+  margin: 0 auto; 
+}
+.features-title { 
+  font-size: 1.875rem; 
+  font-weight: 700; 
+  letter-spacing: -0.02em; 
+  margin: 1.25rem 0 4rem; 
+  max-width: 28rem; 
+}
 .features-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; }
 .feature-illustration {
   border-radius: 2rem 0.5rem 0.5rem 2rem;
-  padding: 5%; /* ← este es el margen interno */
+  padding: 5%;
   margin-bottom: 1.25rem;
   aspect-ratio: 4/3;
   display: flex;
@@ -144,16 +244,28 @@ h1 {
   object-fit: cover;
   border-radius: calc(2rem - 5%) calc(0.5rem - 5%) calc(0.5rem - 5%) calc(2rem - 5%);
 }
-.bg-surface-strong { background: var(--surface-strong); }
+
+/* PARTE VIOLETA CON 70% OPACIDAD */
+.bg-surface-strong { 
+  background: hsla(263, 30%, 82%, 0.7); /* 70% OPACIDAD */
+}
+
 .feature-card h3 { font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem; }
 .feature-card p { font-size: 0.875rem; color: var(--muted); line-height: 1.6; }
 
 /* ── Social proof ── */
 .social-proof {
   position: relative; z-index: 3; overflow: hidden;
-  border-radius: 2rem 2rem 0 0; margin-top: -2rem; background: white;
+  border-radius: 2rem 2rem 0 0; margin-top: -2rem; 
+  background: transparent; /* TRANSPARENTE */
 }
-.social-inner { position: relative; z-index: 10; padding: 5rem 1.5rem 7rem; max-width: 80rem; margin: 0 auto; }
+.social-inner { 
+  position: relative; 
+  z-index: 10; 
+  padding: 5rem 1.5rem 7rem; 
+  max-width: 80rem; 
+  margin: 0 auto; 
+}
 .social-grid { display: grid; grid-template-columns: 1fr; gap: 4rem; align-items: center; }
 .stats-title { font-size: 1.875rem; font-weight: 700; letter-spacing: -0.02em; margin: 1.25rem 0 2.5rem; }
 .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
@@ -161,7 +273,8 @@ h1 {
 .stat-label { font-size: 0.875rem; color: var(--muted); }
 .testimonial-card {
   border-radius: 1rem; border: 1px solid var(--border);
-  background: var(--card); padding: 2rem 2.5rem;
+  background: rgba(255, 255, 255, 0.9); /* LIGERA TRANSPARENCIA PARA LEGIBILIDAD */
+  padding: 2rem 2.5rem;
   box-shadow: 0 1px 3px rgba(0,0,0,0.04); display: flex; gap: 1.5rem;
 }
 .testimonial-bar { width: 4px; border-radius: 9999px; background: var(--primary); flex-shrink: 0; }
@@ -176,7 +289,7 @@ h1 {
 .cta {
   position: relative; z-index: 4; overflow: hidden;
   border-radius: 2rem 2rem 0 0; margin-top: -2rem;
-  background: var(--foreground);
+  background: rgba(38, 35, 45, 0.95); /* TRANSPARENTE CON 95% OPACIDAD */
 }
 .cta-inner { padding: 5rem 1.5rem; max-width: 48rem; margin: 0 auto; text-align: center; }
 .cta h2 { font-size: 1.875rem; font-weight: 700; letter-spacing: -0.02em; color: white; margin-bottom: 1.25rem; }
@@ -192,7 +305,7 @@ h1 {
 
 /* ── Footer ── */
 .site-footer {
-  background: var(--foreground);
+  background: rgba(38, 35, 45, 0.95); /* TRANSPARENTE CON 95% OPACIDAD */
   border-top: 1px solid rgba(255,255,255,0.1);
   padding: 2.5rem 1.5rem;
 }
@@ -231,79 +344,4 @@ h1 {
   .social-inner { padding: 7rem 5rem 9rem; }
   .cta-inner { padding: 7rem 5rem; }
   .site-footer { padding: 2.5rem 5rem; }
-}
-.logo-carousel {
-  position: relative;
-  height: 220px;
-  margin: 2rem auto;
-  border-radius: 2rem;
-  max-width: 1100px;
-  width: 90%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden; /* ← importante: oculta lo que se desborde */
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-/* fondo blur */
-.carousel-bg {
-  position: absolute;
-  inset: 0;
-  border-radius: 2rem;
-  background: rgba(255,255,255,0.6);
-  backdrop-filter: blur(12px);
-}
-
-.carousel-title {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: hsl(260, 10%, 12%); /* color sólido oscuro en lugar de var(--muted) */
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin: 0;
-  text-align: center;
-  position: relative;
-  z-index: 10; /* por encima de todo */
-  opacity: 1 !important; /* fuerza opacidad completa */
-  filter: none !important; /* elimina cualquier blur/filter heredado */
-  background: transparent; /* sin fondo que interfiera */
-}
-/* contenedor centrado con scroll si es necesario, o wrap */
-
-.carousel-track {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center; /* centra horizontalmente */
-  gap: 3rem;
-  flex-wrap: wrap; /* ← permite que bajen de línea si no caben */
-  padding: 0 2rem; /* ← margen interno para que no toquen los bordes */
-  max-width: 100%; /* ← no excede el padre */
-}
-
-/* links */
-.carousel-track a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0; /* ← evita que se encojan */
-}
-
-/* logos */
-.carousel-track img {
-  height: 80px;
-  width: auto; /* ← mantiene proporción */
-  max-width: 150px; /* ← límite para que no sean muy anchos */
-  object-fit: contain;
-  opacity: 0.8;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-/* efecto hover */
-.carousel-track img:hover {
-  transform: scale(1.1); /* reducido un poco para no cortarse */
-  opacity: 1;
 }
