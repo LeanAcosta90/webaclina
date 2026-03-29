@@ -302,7 +302,7 @@ h1 {
   color: white; background: var(--primary);
   border-radius: 9999px; transition: background 0.2s;
 }
-.btn-cta:hover { background: hsl(160, 84%, 34%); }
+.btn-cta:hover { background:  hsl(260, 8%, 46%)); }
 .btn-cta .arrow { margin-left: 0.25rem; }
 
 /* ── Footer ── */
