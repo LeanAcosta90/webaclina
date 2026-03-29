@@ -33,13 +33,13 @@ img { display: block; max-width: 100%; }
   position: fixed; top: 0; left: 0; right: 0; z-index: 50;
   display: flex; align-items: center; justify-content: space-between;
   padding: 1rem 1.5rem;
-  background: rgba(255,255,255,0.95); backdrop-filter: blur(8px);
+  background: hsl(260, 10%, 20%); backdrop-filter: blur(8px);
   box-shadow: 0 1px 3px rgba(0,0,0,0.06);
   transition: transform 0.3s, opacity 0.3s;
 }
 .top-nav.hidden { transform: translateY(-100%); opacity: 0; }
 .top-nav.visible { transform: translateY(0); opacity: 1; }
-.nav-logo { height: 2rem; }
+.nav-logo { height: 3.5rem; }
 .nav-right { display: flex; align-items: center; gap: 0.75rem; }
 .btn-ghost {
   padding: 0.4rem 0.75rem; font-size: 0.875rem; font-weight: 500;
@@ -66,26 +66,28 @@ img { display: block; max-width: 100%; }
 
 /* ── Grid BG ── */
 .grid-bg {
+  display: none; 
   position: absolute; inset: 0; pointer-events: none;
   background-image:
-    linear-gradient(to bottom, rgba(255,255,255,0.8), rgba(255,255,255,1)),
+    linear-gradient(to bottom, hsla(263, 30%, 82%, 0.15);, rgba(255,255,255,1)),
     repeating-linear-gradient(0deg, transparent, transparent 79px, hsl(260,10%,12%,0.04) 79px, hsl(260,10%,12%,0.04) 80px),
-    repeating-linear-gradient(90deg, transparent, transparent 79px, hsl(260,10%,12%,0.04) 79px, hsl(260,10%,12%,0.04) 80px);
+    repeating-linear-gradient(90deg, transparent, transparent 79px hsl(260,10%,12%,0.04) 79px, hsl(260,10%,12%,0.04) 80px),
 }
 
 /* ── Hero ── */
 .hero { 
   position: relative; 
   overflow: hidden; 
-  background: transparent;
+  background: hsla(263, 30%, 82%, 0.15);
+  width: 100%;
 }
 .hero-inner { 
-  position: relative; 
+  position: relative;
   z-index: 10; 
   padding: 2.5rem 1.5rem 5rem; 
   max-width: 80rem; 
   margin: 0 auto; 
-  background: transparent;
+  background: transparent; /* TRANSPARENTE, no violeta */
 }
 .hero-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center; }
 .hero-logo-wrap { margin-bottom: 1.5rem; }
@@ -257,7 +259,7 @@ h1 {
 .social-proof {
   position: relative; z-index: 3; overflow: hidden;
   border-radius: 2rem 2rem 0 0; margin-top: -2rem; 
-  background: transparent; /* TRANSPARENTE */
+  background: hsla(263, 30%, 82%, 0.15);
 }
 .social-inner { 
   position: relative; 
