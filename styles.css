@@ -160,7 +160,7 @@ h1 {
 .logo-carousel {
   position: relative;
   width: 100%;
-  padding: 4rem 1.5rem 6rem; /* Aumentado padding-bottom de 4rem a 6rem */
+  padding: 4rem 1.5rem 8rem; /* Aumentado a 8rem abajo */
   background: hsla(263, 30%, 82%, 0.15);
   backdrop-filter: blur(4px);
   border-top: 1px solid rgba(255, 255, 255, 0.2);
@@ -168,8 +168,9 @@ h1 {
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  margin-bottom: 2rem; /* Espacio extra antes de la siguiente sección */
-  z-index: 5; /* Asegurar que esté por encima */
+  margin-bottom: 0;
+  z-index: 5;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .carousel-bg {
@@ -182,13 +183,10 @@ h1 {
   color: hsl(260, 10%, 12%);
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  margin: 0;
+  margin: 2rem 0 0 0; /* Agregado margen superior de 2rem */
   text-align: center;
   position: relative;
   z-index: 10;
-  opacity: 1 !important;
-  filter: none !important;
-  background: transparent;
 }
 
 .carousel-track {
@@ -322,10 +320,14 @@ h1 {
 .author-role { font-size: 0.75rem; color: var(--muted); }
 
 /* ── CTA ── */
+/* ── CTA ── */
 .cta {
-  position: relative; z-index: 4; overflow: hidden;
-  border-radius: 2rem 2rem 0 0; margin-top: -2rem;
-  background: rgba(38, 35, 45, 0.95); /* TRANSPARENTE CON 95% OPACIDAD */
+  position: relative; 
+  z-index: 6; /* Aumentado para estar por encima */
+  overflow: hidden;
+  border-radius: 2rem 2rem 0 0; 
+  margin-top: 2rem; /* CAMBIADO: de -2rem a 2rem */
+  background: rgba(38, 35, 45, 0.95);
 }
 .cta-inner { padding: 5rem 1.5rem; max-width: 48rem; margin: 0 auto; text-align: center; }
 .cta h2 { font-size: 1.875rem; font-weight: 700; letter-spacing: -0.02em; color: white; margin-bottom: 1.25rem; }
