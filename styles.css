@@ -156,22 +156,20 @@ h1 {
 .notif-card-inner .notif-sub { font-size: 11px; color: var(--muted); }
 .notif-card-inner .notif-main { font-size: 0.875rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
-/* ── Logo Carousel ── */
+/* ── Logo Carousel (Empresas) ── */
 .logo-carousel {
   position: relative;
   width: 100%;
-  height: 220px;
-  margin: 2rem 0;
-  border-radius: 0;
+  padding: 4rem 1.5rem 6rem; /* Aumentado padding-bottom de 4rem a 6rem */
+  background: hsla(263, 30%, 82%, 0.15);
+  backdrop-filter: blur(4px);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 1.5rem;
-  background: hsla(263, 30%, 82%, 0.15); /* VIOLETA con 15% opacidad */
-  backdrop-filter: blur(4px);
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  gap: 2rem;
+  margin-bottom: 2rem; /* Espacio extra antes de la siguiente sección */
+  z-index: 5; /* Asegurar que esté por encima */
 }
 
 .carousel-bg {
