@@ -1,7 +1,9 @@
-// Nav show/hide on scroll
+// Nav show/hide on scroll & Smooth Scroll
 const nav = document.getElementById("topNav");
+
 window.addEventListener("scroll", () => {
-  if (window.scrollY > 100) {
+  // Ajustado a 150 para que el cambio sea más fluido al salir del Hero
+  if (window.scrollY > 150) {
     nav.classList.remove("hidden");
     nav.classList.add("visible");
   } else {
@@ -10,6 +12,28 @@ window.addEventListener("scroll", () => {
   }
 }, { passive: true });
 
+// Lógica de desplazamiento suave (Smooth Scroll)
+document.querySelectorAll('.nav-center a').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const targetId = this.getAttribute('href');
+    
+    // Solo aplicamos scroll suave si es un enlace interno (empieza con #)
+    if (targetId.startsWith('#')) {
+      e.preventDefault();
+      const targetElement = document.querySelector(targetId);
+      
+      if (targetElement) {
+        // El -80 es para que el menú fijo no tape el título de la sección
+        const offsetPosition = targetElement.offsetTop - 80;
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }
+  });
+});
 // Year
 document.getElementById("year").textContent = new Date().getFullYear();
 
